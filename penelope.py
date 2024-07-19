@@ -3005,7 +3005,7 @@ class Interfaces:
 		elif OS == 'Darwin':
 			_list = dict()
 			if shutil.which("ifconfig"):
-				output = re.sub('\n\s', ' ', subprocess.check_output(['ifconfig']).decode())
+				output = re.sub(r'\n\s', ' ', subprocess.check_output(['ifconfig']).decode())
 				for line in output.splitlines():
 					result = re.search('^([^:]*).*inet ([^ ]*)', line)
 					if result:
